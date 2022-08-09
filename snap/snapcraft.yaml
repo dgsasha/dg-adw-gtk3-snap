@@ -1,0 +1,68 @@
+name: dg-adw-gtk3-theme
+version: '1.0'
+architectures:
+  - build-on: amd64
+    run-on: all
+summary: dg-adw-gtk3 theme
+description: |
+  A Libadwaita + macOS + Yaru GTK3 theme.
+build-base: core20
+base: bare
+compression: lzo
+
+grade: stable
+confinement: strict
+
+slots:
+  gtk-3-themes:
+    interface: content
+    source:
+      read:
+        - $SNAP/share/themes/dg-adw-gtk3-orange
+        - $SNAP/share/themes/dg-adw-gtk3-bark
+        - $SNAP/share/themes/dg-adw-gtk3-blue
+        - $SNAP/share/themes/dg-adw-gtk3-magenta
+        - $SNAP/share/themes/dg-adw-gtk3-olive
+        - $SNAP/share/themes/dg-adw-gtk3-prussiangreen
+        - $SNAP/share/themes/dg-adw-gtk3-purple
+        - $SNAP/share/themes/dg-adw-gtk3-red
+        - $SNAP/share/themes/dg-adw-gtk3-sage
+        - $SNAP/share/themes/dg-adw-gtk3-viridian
+        - $SNAP/share/themes/dg-adw-gtk3-dark
+        - $SNAP/share/themes/dg-adw-gtk3-orange-dark
+        - $SNAP/share/themes/dg-adw-gtk3-bark-dark
+        - $SNAP/share/themes/dg-adw-gtk3-blue-dark
+        - $SNAP/share/themes/dg-adw-gtk3-magenta-dark
+        - $SNAP/share/themes/dg-adw-gtk3-olive-dark
+        - $SNAP/share/themes/dg-adw-gtk3-prussiangreen-dark
+        - $SNAP/share/themes/dg-adw-gtk3-purple-dark
+        - $SNAP/share/themes/dg-adw-gtk3-red-dark
+        - $SNAP/share/themes/dg-adw-gtk3-sage-dark
+        - $SNAP/share/themes/dg-adw-gtk3-viridian-dark
+        
+parts:
+  # dg-adw-gtk3
+  dg-adw-gtk3:
+    after: [utils]
+    source: https://github.com/dgmarie/dg-adw-gtk3.git
+    source-commit: fcda76141b2d3be332e8a291a8c081f27b0d86c2
+    plugin: meson
+    meson-parameters:
+      - --prefix=/
+    build-packages:
+      - sassc
+    override-build: |
+        snapcraftctl build
+        snapcraftctl set-version "$(git describe --tags 2>/dev/null || echo 1.0)"
+        mkdir -p $SNAPCRAFT_PART_INSTALL/share/themes
+    stage:
+      - share/themes
+      
+  utils:
+    plugin: dump
+    source: utils
+    prime:
+      - -*
+    build-packages:
+      - try: [gtk-update-icon-cache]
+      - else: [libgtk-3-bin]
