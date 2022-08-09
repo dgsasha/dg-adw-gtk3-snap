@@ -1,5 +1,5 @@
 <h1 align="center">
-  <img src="icon.png" alt="dg-adw-gtk3-theme">
+  <img src="icon.png" alt="dg-adw-gtk3-theme" width="156">
   <br />
   dg-adw-gtk3-theme
 </h1>
@@ -10,7 +10,11 @@
   It works on Ubuntu, Fedora, Debian, and other major Linux distributions.
 </p>
 
+<div align="center">
+
 ![dg-adw-gtk3-snap](screenshot.png?raw=true "dg-adw-gtk3-snap")
+
+</div>
 
 ## Install
 ```
@@ -21,12 +25,17 @@ sudo snap install dg-adw-gtk3-theme
 
 [Don't have snapd installed?](https://snapcraft.io/docs/core/install)
 
-## Enabling Theme
+## Enabling GTK3 Theme
 ```
-for i in $(snap connections | grep gtk-common-themes:gtk-3-themes | awk '{print $2}'); do sudo snap connect $i dg-adw-gtk3-theme:gtk-3-themes; done 
+for i in $(snap connections | grep gtk-common-themes:gtk-3-themes | awk '{print $2}'); do sudo snap connect $i dg-adw-gtk3-theme:gtk-3-themes; done
 ```
 
-## Disabling Theme
+## Enabling Icon Theme
 ```
-for i in $(snap connections | grep gtk-common-themes:gtk-3-themes | awk '{print $2}'); do sudo snap disconnect $i dg-adw-gtk3-theme:gtk-3-themes; done 
+for i in $(snap connections | grep gtk-common-themes:icon-themes | awk '{print $2}'); do sudo snap connect $i dg-adw-gtk3-theme:icon-themes; done
+```
+
+## Enabling Sound Theme
+```
+for i in $(snap connections | grep gtk-common-themes:sound-themes | awk '{print $2}'); do sudo snap connect $i dg-adw-gtk3-theme:sound-themes; done
 ```

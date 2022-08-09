@@ -28,7 +28,6 @@ slots:
         - $SNAP/share/themes/dg-adw-gtk3-red
         - $SNAP/share/themes/dg-adw-gtk3-sage
         - $SNAP/share/themes/dg-adw-gtk3-viridian
-        - $SNAP/share/themes/dg-adw-gtk3-dark
         - $SNAP/share/themes/dg-adw-gtk3-orange-dark
         - $SNAP/share/themes/dg-adw-gtk3-bark-dark
         - $SNAP/share/themes/dg-adw-gtk3-blue-dark
@@ -39,12 +38,42 @@ slots:
         - $SNAP/share/themes/dg-adw-gtk3-red-dark
         - $SNAP/share/themes/dg-adw-gtk3-sage-dark
         - $SNAP/share/themes/dg-adw-gtk3-viridian-dark
-        
+  icon-themes:
+    interface: content
+    source:
+      read:
+        - $SNAP/share/icons/dg-yaru
+        - $SNAP/share/icons/dg-yaru-bark
+        - $SNAP/share/icons/dg-yaru-blue
+        - $SNAP/share/icons/dg-yaru-magenta
+        - $SNAP/share/icons/dg-yaru-olive
+        - $SNAP/share/icons/dg-yaru-prussiangreen
+        - $SNAP/share/icons/dg-yaru-purple
+        - $SNAP/share/icons/dg-yaru-red
+        - $SNAP/share/icons/dg-yaru-sage
+        - $SNAP/share/icons/dg-yaru-viridian
+        - $SNAP/share/icons/dg-yaru-dark
+        - $SNAP/share/icons/dg-yaru-bark-dark
+        - $SNAP/share/icons/dg-yaru-blue-dark
+        - $SNAP/share/icons/dg-yaru-magenta-dark
+        - $SNAP/share/icons/dg-yaru-olive-dark
+        - $SNAP/share/icons/dg-yaru-prussiangreen-dark
+        - $SNAP/share/icons/dg-yaru-purple-dark
+        - $SNAP/share/icons/dg-yaru-red-dark
+        - $SNAP/share/icons/dg-yaru-sage-dark
+        - $SNAP/share/icons/dg-yaru-viridian-dark
+  sound-themes:
+    interface: content
+    source:
+      read:
+        - $SNAP/share/sounds/dg-yaru
+
 parts:
   # dg-adw-gtk3
   dg-adw-gtk3:
     after: [utils]
     source: https://github.com/dgmarie/dg-adw-gtk3.git
+    source-depth: 1
     source-commit: fcda76141b2d3be332e8a291a8c081f27b0d86c2
     plugin: meson
     meson-parameters:
@@ -52,12 +81,32 @@ parts:
     build-packages:
       - sassc
     override-build: |
-        snapcraftctl build
-        snapcraftctl set-version "$(git describe --tags 2>/dev/null || echo 1.0)"
-        mkdir -p $SNAPCRAFT_PART_INSTALL/share/themes
+      snapcraftctl build
+      snapcraftctl set-version "$(git describe --tags 2>/dev/null || echo 1.0)"
+      mkdir -p $SNAPCRAFT_PART_INSTALL/share/themes
     stage:
       - share/themes
-      
+
+  # dg-yaru
+  dg-yaru:
+    after: [utils]
+    source: https://github.com/dgmarie/dg-yaru.git
+    source-depth: 1
+    source-commit: 9a1ff83f01f636aec40ab3b688158f3c3dd9024c
+    plugin: meson
+    meson-parameters:
+      - --prefix=/
+      - -Dgnome-shell=false
+    override-build: |
+      snapcraftctl build
+      snapcraftctl set-version "$(git describe --tags 2>/dev/null || echo 1.0)"
+      mkdir -p $SNAPCRAFT_PART_INSTALL/share/icons
+      mkdir -p $SNAPCRAFT_PART_INSTALL/share/sounds
+      $SNAPCRAFT_STAGE/update-icon-cache.sh $SNAPCRAFT_PART_INSTALL/share/icons
+    stage:
+      - share/icons
+      - share/sounds
+
   utils:
     plugin: dump
     source: utils
