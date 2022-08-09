@@ -4,8 +4,11 @@
   dg-adw-gtk3-theme
 </h1>
 
-<p align="center"><b>This is the snap for <a href="https://github.com/dgmarie/dg-adw-gtk3">dg-adw-gtk3</a></b>, <i>A Libadwaita + macOS + Yaru GTK3 theme</i>. It works on Ubuntu, Fedora, Debian, and other major Linux
-distributions.</p>
+<p align="center"><b>
+  This is the snap for <a href="https://github.com/dgmarie/dg-adw-gtk3">dg-adw-gtk3</a></b>, <i>a Libadwaita + macOS + Yaru GTK3 theme</i>. 
+  <br />
+  It works on Ubuntu, Fedora, Debian, and other major Linux distributions.
+</p>
 
 <!-- Uncomment and modify this when you are provided a build status badge
 <p align="center">
