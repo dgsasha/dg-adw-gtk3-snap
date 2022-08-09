@@ -10,17 +10,6 @@
   It works on Ubuntu, Fedora, Debian, and other major Linux distributions.
 </p>
 
-<!-- Uncomment and modify this when you are provided a build status badge
-<p align="center">
-<a href="https://snapcraft.io/my-snap-name">
-  <img alt="enpass" src="https://snapcraft.io/my-snap-name/badge.svg" />
-</a>
-<a href="https://snapcraft.io/my-snap-name">
-  <img alt="enpass" src="https://snapcraft.io/my-snap-name/trending.svg?name=0" />
-</a>
-</p>
--->
-
 ![dg-adw-gtk3-snap](screenshot.png?raw=true "dg-adw-gtk3-snap")
 
 ## Install
@@ -28,9 +17,7 @@
 sudo snap install dg-adw-gtk3-theme
 ```
 
-<!-- Uncomment and modify this when your snap is available on the store
-[![Get it from the Snap Store](https://snapcraft.io/static/images/badges/en/snap-store-white.svg)](https://snapcraft.io/my-snap-name)
--->
+[![Get it from the Snap Store](https://snapcraft.io/static/images/badges/en/snap-store-white.svg)](https://snapcraft.io/dg-adw-gtk3-theme)
 
 [Don't have snapd installed?](https://snapcraft.io/docs/core/install)
 
