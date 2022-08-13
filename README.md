@@ -1,18 +1,17 @@
 <h1 align="center">
-  <img src="icon.png" alt="dg-adw-gtk3-theme" width="156">
+  <img src="images/icon.png" alt="dg-adw-gtk3-theme" width="156">
   <br />
   dg-adw-gtk3-theme
 </h1>
 
 <p align="center"><b>
   This is the snap for <a href="https://github.com/dgmarie/dg-adw-gtk3">dg-adw-gtk3</a></b>, <i>a Libadwaita + macOS + Yaru GTK3 theme</i>. 
-  <br />
-  It works on Ubuntu, Fedora, Debian, and other major Linux distributions.
 </p>
 
 <div align="center">
 
-![dg-adw-gtk3-snap](screenshot.png?raw=true "dg-adw-gtk3-snap")
+![dg-adw-gtk3-light](images/light.png?raw=true "dg-adw-gtk3-light")
+![dg-adw-gtk3-dark](images/dark.png?raw=true "dg-adw-gtk3-dark")
 
 </div>
 
