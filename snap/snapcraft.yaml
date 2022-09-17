@@ -80,6 +80,7 @@ parts:
       - --prefix=/
     build-packages:
       - sassc
+      - rsync
     override-build: |
       snapcraftctl build
       snapcraftctl set-version "$(git describe --tags 2>/dev/null || echo 1.0)"
@@ -92,7 +93,7 @@ parts:
     after: [utils]
     source: https://github.com/dgmarie/dg-yaru.git
     source-depth: 1
-    source-commit: 0106af3a9bff75709c584efa9095671a86296fc0
+    source-commit: ee2137449b085c2fd78e750fade3cde219967bb5
     plugin: meson
     meson-parameters:
       - --prefix=/
