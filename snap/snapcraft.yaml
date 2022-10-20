@@ -20,21 +20,25 @@ slots:
       read:
         - $SNAP/share/themes/dg-adw-gtk3-orange
         - $SNAP/share/themes/dg-adw-gtk3-bark
+        - $SNAP/share/themes/dg-adw-gtk3-lightblue
         - $SNAP/share/themes/dg-adw-gtk3-blue
         - $SNAP/share/themes/dg-adw-gtk3-magenta
         - $SNAP/share/themes/dg-adw-gtk3-olive
         - $SNAP/share/themes/dg-adw-gtk3-prussiangreen
         - $SNAP/share/themes/dg-adw-gtk3-purple
+        - $SNAP/share/themes/dg-adw-gtk3-pink
         - $SNAP/share/themes/dg-adw-gtk3-red
         - $SNAP/share/themes/dg-adw-gtk3-sage
         - $SNAP/share/themes/dg-adw-gtk3-viridian
         - $SNAP/share/themes/dg-adw-gtk3-orange-dark
         - $SNAP/share/themes/dg-adw-gtk3-bark-dark
+        - $SNAP/share/themes/dg-adw-gtk3-lightblue-dark
         - $SNAP/share/themes/dg-adw-gtk3-blue-dark
         - $SNAP/share/themes/dg-adw-gtk3-magenta-dark
         - $SNAP/share/themes/dg-adw-gtk3-olive-dark
         - $SNAP/share/themes/dg-adw-gtk3-prussiangreen-dark
         - $SNAP/share/themes/dg-adw-gtk3-purple-dark
+        - $SNAP/share/themes/dg-adw-gtk3-pink-dark
         - $SNAP/share/themes/dg-adw-gtk3-red-dark
         - $SNAP/share/themes/dg-adw-gtk3-sage-dark
         - $SNAP/share/themes/dg-adw-gtk3-viridian-dark
@@ -44,21 +48,25 @@ slots:
       read:
         - $SNAP/share/icons/dg-yaru
         - $SNAP/share/icons/dg-yaru-bark
+        - $SNAP/share/icons/dg-yaru-lightblue
         - $SNAP/share/icons/dg-yaru-blue
         - $SNAP/share/icons/dg-yaru-magenta
         - $SNAP/share/icons/dg-yaru-olive
         - $SNAP/share/icons/dg-yaru-prussiangreen
         - $SNAP/share/icons/dg-yaru-purple
+        - $SNAP/share/icons/dg-yaru-pink
         - $SNAP/share/icons/dg-yaru-red
         - $SNAP/share/icons/dg-yaru-sage
         - $SNAP/share/icons/dg-yaru-viridian
         - $SNAP/share/icons/dg-yaru-dark
         - $SNAP/share/icons/dg-yaru-bark-dark
         - $SNAP/share/icons/dg-yaru-blue-dark
+        - $SNAP/share/icons/dg-yaru-lightblue-dark
         - $SNAP/share/icons/dg-yaru-magenta-dark
         - $SNAP/share/icons/dg-yaru-olive-dark
         - $SNAP/share/icons/dg-yaru-prussiangreen-dark
         - $SNAP/share/icons/dg-yaru-purple-dark
+        - $SNAP/share/icons/dg-yaru-pink-dark
         - $SNAP/share/icons/dg-yaru-red-dark
         - $SNAP/share/icons/dg-yaru-sage-dark
         - $SNAP/share/icons/dg-yaru-viridian-dark
@@ -74,7 +82,7 @@ parts:
     after: [utils]
     source: https://github.com/dgmarie/dg-adw-gtk3.git
     source-depth: 1
-    source-commit: b2f9611888163627270aef2cdce1ad09759ccc83
+    source-commit: 4e6ce08de57ca977109211454d5c35b0c185ca31
     plugin: meson
     meson-parameters:
       - --prefix=/
@@ -93,7 +101,7 @@ parts:
     after: [utils]
     source: https://github.com/dgmarie/dg-yaru.git
     source-depth: 1
-    source-commit: 7ddf6cf7414465db754022436598c6851e908b54
+    source-commit: b2865a6f07d716302edc64b17cec9f3867ff3b77
     plugin: meson
     meson-parameters:
       - --prefix=/
