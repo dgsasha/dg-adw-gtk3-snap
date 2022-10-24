@@ -5,7 +5,7 @@
 </h1>
 
 <p align="center"><b>
-  This is the snap for <a href="https://github.com/dgmarie/dg-adw-gtk3">dg-adw-gtk3</a></b>, <i>a Libadwaita + macOS + Yaru GTK3 theme</i>. 
+  This is the snap for <a href="https://github.com/dgmarie/dg-adw-gtk3">dg-adw-gtk3</a></b>, <i>a Yaru inspired GTK3 theme</i>. 
 </p>
 
 <div align="center">
